@@ -1,11 +1,13 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group"
+  default     = "my_resource_group" 
 }
 
 variable "resource_group_location" {
   type        = string
   description = "The location of the resource group"
+  default     = "westeurope"
 }
 
 variable "app_service_plan_name" {
