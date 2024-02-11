@@ -15,8 +15,8 @@ env:
 
 jobs:
   terraform-plan:
-    name: 'Terraform'
-    runs-on: ubuntu-latest
+    name: 'Terraform Plan'
+    runs-on: ubuntu
 
     defaults:
       run:
@@ -59,11 +59,8 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
-      - name: Terraform Init
-        run: terraform init
-
       - name: Download Terraform Plan
-        uses: actions/upload-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: tfplan
           path: .
