@@ -1,4 +1,4 @@
-name: 'Terraform Plan And Apply'
+name: Terraform Plan And Apply
 
 on:
   push:
@@ -15,12 +15,8 @@ env:
 
 jobs:
   terraform-plan:
-    name: 'Terraform'
+    name: 'Terraform Plan'
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash
 
     steps:
       - name: Checkout
@@ -63,7 +59,7 @@ jobs:
         run: terraform init
 
       - name: Download Terraform Plan
-        uses: actions/upload-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: tfplan
           path: .
